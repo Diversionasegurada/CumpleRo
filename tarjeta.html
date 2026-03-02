@@ -1,125 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feliz Cumple Romeli 🎉</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumple Romeli 🎉</title>
 
-  <style>
-    body{
-      margin:0;
-      padding:0;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      font-family:"Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ff0080, #1b0031 70%);
-      color:#fff;
-      text-align:center;
-      overflow-x:hidden;
-      padding:20px;
-    }
+<style>
+body{
+  margin:0;
+  padding:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family:"Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #ff0080, #1b0031 70%);
+  color:#fff;
+  text-align:center;
+  overflow-x:hidden;
+  padding:20px;
+}
 
-    h1{
-      margin:10px 0 20px 0;
-      font-size:1.8rem;
-      text-shadow:0 0 20px rgba(255,255,255,0.4);
-    }
+h1{
+  margin:5px 0 10px 0;
+  font-size:1.8rem;
+  text-shadow:0 0 20px rgba(255,255,255,0.4);
+}
 
-    .card{
-      width:100%;
-      max-width:520px;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,0.5);
-      animation: aparecer 1.2s ease;
-    }
+#contador{
+  font-size:1.1rem;
+  margin-bottom:15px;
+  font-weight:bold;
+  background:rgba(255,255,255,0.1);
+  padding:10px 18px;
+  border-radius:30px;
+}
 
-    .card img{
-      width:100%;
-      display:block;
-    }
+.card{
+  width:100%;
+  max-width:520px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  animation: aparecer 1.2s ease;
+}
 
-    .botones{
-      margin-top:20px;
-      display:flex;
-      gap:15px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+.card img{
+  width:100%;
+  display:block;
+}
 
-    .btn{
-      text-decoration:none;
-      background:linear-gradient(45deg, #ff512f, #dd2476);
-      padding:14px 20px;
-      border-radius:40px;
-      color:white;
-      font-weight:bold;
-      font-size:0.95rem;
-      transition:0.3s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.4);
-    }
+.botones{
+  margin-top:20px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
 
-    .btn:hover{
-      transform:scale(1.08);
-      box-shadow:0 10px 25px rgba(0,0,0,0.6);
-    }
+.btn{
+  text-decoration:none;
+  background:linear-gradient(45deg, #ff512f, #dd2476);
+  padding:14px 20px;
+  border-radius:40px;
+  color:white;
+  font-weight:bold;
+  font-size:0.95rem;
+  transition:0.3s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
 
-    .nota{
-      margin-top:15px;
-      opacity:0.9;
-      font-size:0.95rem;
-    }
+.btn:hover{
+  transform:scale(1.08);
+}
 
-    @keyframes aparecer{
-      from{opacity:0; transform:translateY(30px);}
-      to{opacity:1; transform:translateY(0);}
-    }
+@keyframes aparecer{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
 
-    audio{
-      display:none;
-    }
-
-  </style>
+audio{
+  display:none;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>🎉 ¡Romeli cumple 41! 🎂🔥</h1>
+<h1>🎉 ¡Romeli cumple 41! 🎂🔥</h1>
 
-  <div class="card">
-    <img src="tarjetaromeli.jpeg" alt="Tarjeta Cumpleaños Romeli">
-  </div>
+<div id="contador">⏳ Calculando tiempo restante...</div>
 
-  <div class="botones">
-    <a class="btn" href="https://maps.app.goo.gl/8Wgq57LVhDiThsUn8" target="_blank">
-      📍 Ver Ubicación
-    </a>
+<div class="card">
+  <img src="tarjetaromeli.jpeg" alt="Tarjeta Cumpleaños Romeli">
+</div>
 
-    <a class="btn" href="https://wa.me/5492233000273?text=Obvio%20RO%2C%20conta%20conmigo" target="_blank">
-      ✅ Confirmar Asistencia
-    </a>
-  </div>
+<div class="botones">
+  <a class="btn" href="https://maps.app.goo.gl/8Wgq57LVhDiThsUn8" target="_blank">
+    📍 Ver Ubicación
+  </a>
 
-  <p class="nota">🔥 Subí el volumen y que arranque la fiesta 🔊</p>
+  <a class="btn" href="https://wa.me/5492233000273?text=Obvio%20RO%2C%20conta%20conmigo" target="_blank">
+    ✅ Confirmar Asistencia
+  </a>
+</div>
 
-  <!-- Música -->
-  <audio id="audioFiesta" loop>
-    <source src="danza-kuduro-official-remix.mp3" type="audio/mpeg">
-  </audio>
+<!-- Música -->
+<audio id="audioFiesta" loop>
+  <source src="danza-kuduro-official-remix.mp3" type="audio/mpeg">
+</audio>
 
-  <script>
-    const audio = document.getElementById("audioFiesta");
+<!-- Librería de confeti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-    function iniciarMusica(){
-      audio.volume = 0.7;
-      audio.play().catch(() => {});
+<script>
+// ==========================
+// 🎯 FECHA DE LA FIESTA
+// ==========================
+const fechaFiesta = new Date("2026-03-20T21:00:00"); // <-- CAMBIAR
+
+// ==========================
+// ⏳ CUENTA REGRESIVA
+// ==========================
+const contador = document.getElementById("contador");
+
+function actualizarContador(){
+  const ahora = new Date();
+  const diferencia = fechaFiesta - ahora;
+
+  if(diferencia <= 0){
+    contador.innerHTML = "🎉 ¡La fiesta ya comenzó!";
+    return;
+  }
+
+  const dias = Math.floor(diferencia / (1000*60*60*24));
+  const horas = Math.floor((diferencia / (1000*60*60)) % 24);
+  const minutos = Math.floor((diferencia / (1000*60)) % 60);
+
+  contador.innerHTML = `⏳ Faltan ${dias} días ${horas} horas ${minutos} minutos para la fiesta`;
+}
+
+setInterval(actualizarContador, 60000);
+actualizarContador();
+
+// ==========================
+// 🎉 CONFETI
+// ==========================
+function lanzarConfeti(){
+  const duration = 3000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
     }
+  }());
+}
 
-    window.addEventListener("load", iniciarMusica);
-  </script>
+// ==========================
+// 🎵 MÚSICA + CONFETI AL CARGAR
+// ==========================
+window.addEventListener("load", function(){
+  const audio = document.getElementById("audioFiesta");
+  audio.volume = 0.7;
+  audio.play().catch(()=>{});
+  lanzarConfeti();
+});
+</script>
 
 </body>
 </html>
