@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feliz Cumple Romeli 🎂</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumple Romeli 🎉</title>
+
   <style>
     body{
       margin:0;
@@ -14,38 +15,26 @@
       align-items:center;
       justify-content:center;
       font-family:"Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ff4fd8, #1b0031 70%);
+      background: radial-gradient(circle at top, #ff0080, #1b0031 70%);
       color:#fff;
       text-align:center;
       overflow-x:hidden;
-      padding:24px;
+      padding:20px;
     }
 
-    .wrap{
-      width:100%;
-      max-width:720px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:16px;
-    }
-
-    .titulo{
-      margin:0;
-      font-size:1.6rem;
-      letter-spacing:.5px;
-      text-shadow: 0 8px 22px rgba(0,0,0,.35);
+    h1{
+      margin:10px 0 20px 0;
+      font-size:1.8rem;
+      text-shadow:0 0 20px rgba(255,255,255,0.4);
     }
 
     .card{
       width:100%;
       max-width:520px;
-      border-radius:16px;
+      border-radius:18px;
       overflow:hidden;
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.08);
-      backdrop-filter: blur(8px);
+      box-shadow:0 20px 60px rgba(0,0,0,0.5);
+      animation: aparecer 1.2s ease;
     }
 
     .card img{
@@ -53,69 +42,84 @@
       display:block;
     }
 
-    .note{
-      opacity:.9;
-      margin:0;
-      font-size:1rem;
+    .botones{
+      margin-top:20px;
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      justify-content:center;
     }
 
     .btn{
-      display:inline-block;
-      margin-top:6px;
-      background: rgba(255,255,255,.16);
-      border:1px solid rgba(255,255,255,.25);
-      color:#fff;
-      padding:12px 18px;
-      border-radius:999px;
       text-decoration:none;
-      cursor:pointer;
-      font-size:1rem;
+      background:linear-gradient(45deg, #ff512f, #dd2476);
+      padding:14px 20px;
+      border-radius:40px;
+      color:white;
+      font-weight:bold;
+      font-size:0.95rem;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.4);
     }
 
     .btn:hover{
-      background: rgba(255,255,255,.22);
+      transform:scale(1.08);
+      box-shadow:0 10px 25px rgba(0,0,0,0.6);
     }
 
-    /* oculto el reproductor pero lo dejo existente */
-    audio{ display:none; }
+    .nota{
+      margin-top:15px;
+      opacity:0.9;
+      font-size:0.95rem;
+    }
+
+    @keyframes aparecer{
+      from{opacity:0; transform:translateY(30px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    audio{
+      display:none;
+    }
+
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <h1 class="titulo">🎉 ¡Feliz Cumple, Romeli! 🎂</h1>
 
-    <div class="card">
-      <img src="tarjetaromeli.jpeg" alt="Tarjeta de cumpleaños Romeli">
-    </div>
+  <h1>🎉 ¡Romeli cumple 41! 🎂🔥</h1>
 
-    <p class="note">Subí el volumen 😄🔥</p>
-
-    <!-- Botón de respaldo por si el navegador bloquea autoplay -->
-    <button class="btn" onclick="activarMusica()">▶ Activar música</button>
-
-    <audio id="audioFiesta" loop>
-      <source src="danza-kuduro-official-remix.mp3" type="audio/mpeg" />
-      Tu navegador no soporta audio HTML5.
-    </audio>
+  <div class="card">
+    <img src="tarjetaromeli.jpeg" alt="Tarjeta Cumpleaños Romeli">
   </div>
+
+  <div class="botones">
+    <a class="btn" href="https://maps.app.goo.gl/8Wgq57LVhDiThsUn8" target="_blank">
+      📍 Ver Ubicación
+    </a>
+
+    <a class="btn" href="https://wa.me/5492233000273?text=Obvio%20RO%2C%20conta%20conmigo" target="_blank">
+      ✅ Confirmar Asistencia
+    </a>
+  </div>
+
+  <p class="nota">🔥 Subí el volumen y que arranque la fiesta 🔊</p>
+
+  <!-- Música -->
+  <audio id="audioFiesta" loop>
+    <source src="danza-kuduro-official-remix.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
     const audio = document.getElementById("audioFiesta");
 
-    function intentarPlay(){
-      if (!audio) return;
-      audio.volume = 0.6;
-      audio.play().catch(() => {
-        // Si lo bloquea, queda el botón "Activar música"
-      });
+    function iniciarMusica(){
+      audio.volume = 0.7;
+      audio.play().catch(() => {});
     }
 
-    function activarMusica(){
-      intentarPlay();
-    }
-
-    // Intento de autoplay (muchas veces funciona porque venís de un click)
-    window.addEventListener("load", intentarPlay);
+    window.addEventListener("load", iniciarMusica);
   </script>
+
 </body>
 </html>
