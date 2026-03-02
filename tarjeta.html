@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Cumple Romeli 🎂</title>
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      font-family:"Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #ff4fd8, #1b0031 70%);
+      color:#fff;
+      text-align:center;
+      overflow-x:hidden;
+      padding:24px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:720px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+
+    .titulo{
+      margin:0;
+      font-size:1.6rem;
+      letter-spacing:.5px;
+      text-shadow: 0 8px 22px rgba(0,0,0,.35);
+    }
+
+    .card{
+      width:100%;
+      max-width:520px;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .card img{
+      width:100%;
+      display:block;
+    }
+
+    .note{
+      opacity:.9;
+      margin:0;
+      font-size:1rem;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:6px;
+      background: rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.25);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      cursor:pointer;
+      font-size:1rem;
+    }
+
+    .btn:hover{
+      background: rgba(255,255,255,.22);
+    }
+
+    /* oculto el reproductor pero lo dejo existente */
+    audio{ display:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="titulo">🎉 ¡Feliz Cumple, Romeli! 🎂</h1>
+
+    <div class="card">
+      <img src="tarjetaromeli.jpeg" alt="Tarjeta de cumpleaños Romeli">
+    </div>
+
+    <p class="note">Subí el volumen 😄🔥</p>
+
+    <!-- Botón de respaldo por si el navegador bloquea autoplay -->
+    <button class="btn" onclick="activarMusica()">▶ Activar música</button>
+
+    <audio id="audioFiesta" loop>
+      <source src="danza-kuduro-official-remix.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio HTML5.
+    </audio>
+  </div>
+
+  <script>
+    const audio = document.getElementById("audioFiesta");
+
+    function intentarPlay(){
+      if (!audio) return;
+      audio.volume = 0.6;
+      audio.play().catch(() => {
+        // Si lo bloquea, queda el botón "Activar música"
+      });
+    }
+
+    function activarMusica(){
+      intentarPlay();
+    }
+
+    // Intento de autoplay (muchas veces funciona porque venís de un click)
+    window.addEventListener("load", intentarPlay);
+  </script>
+</body>
+</html>
